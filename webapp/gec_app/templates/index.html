@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grammar Error Correction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Grammatical Error Correction Model</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+ 
+      <div class="input-div">
+        <h5>Input Text</h5>
+          <p id="input" contenteditable="True"></p>
+      </div>
+      
+      <div class="output-div">
+        <h5>Correction</h5>
+              
+       <p id="myp"></p>
+            
+      </div>
+
+    </div>
+
+   <script>
+    $(document).ready(function () {
+    $("#input").focusout(function(){
+     const text = $("#input").text()
+    
+     $.ajax({
+      type: "POST",
+      url: "/",
+      data: { input_text: text},
+      success: function (data){
+        corrected_list = data.corrections
+        annotated_input_list = data.annotated_input
+        correct_html = ""
+        input_html = ""
+        for (let i=0; i<corrected_list.length; i++){
+          correct_html = correct_html + corrected_list[i] + " "
+        }
+        for(let i=0; i<annotated_input_list.length; i++){
+          input_html = input_html + annotated_input_list[i] + ""
+        }
+        
+        $("#myp").html(correct_html);
+        $("#input").html(input_html);
+      }
+     })
+
+    })
+
+    });
+    </script>
+   
+  </body>
+</html>

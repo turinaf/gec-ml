@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grammar Error Correction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div>
+      <h1>Grammar Error Correction</h1>
+       <!-- <textarea id="input_text" rows="10" cols="80"></textarea> -->
+      <div id="input_text" contentEditable="true">
+        Edit your text here
+      </div>
+    </div>
+    <script>
+      $(function () {
+        // const input = $("#input_text");
+        // const content_editable = document.querySelector('[contenteditable]')
+        const tDiv = document.getElementById("input_text")
+
+        tDiv.on("content_editable", function () {
+          // const text = input.val();
+          const text = tDiv.innerText
+
+          $.ajax({
+            type: "POST",
+            url: "/",
+            data: { input_text: text },
+            success: function (data) {
+              const correctedText = data.corrected_text;
+              const errors = data.errors;
+              // if (correctedText !== input.val()) {
+              //   input.val(correctedText);
+              //   highlightErrors(errors);
+              // }
+
+              // Replaced the above commented section
+              if (correctedText !== tDiv.val()) {
+                tDiv.val(correctedText);
+                highlightErrors(errors);
+              }
+            },
+            error: function (xhr, status, error) {
+              console.error(error);
+            },
+          });
+        });
+
+        function highlightErrors(errors) {
+          // const text = input.val();
+          // input.html(text);
+          const text = tDiv.innerText
+
+          for (let i = 0; i < errors.length; i++) {
+            // const error = errors[i].split();
+            // const start = parseInt(error[0]);
+            // const end = parseInt(error[1]);
+
+            // const errorText = text.substring(start, end);
+            // const replacement = `<span class="error">${errorText}</span>`;
+            // const newText = text.substring(0, start) + replacement + text.substring(end);
+             const error = errors[i]
+             const start = parseInt(error[0])
+             const end = parseInt(error)
+
+            input.val(newText);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

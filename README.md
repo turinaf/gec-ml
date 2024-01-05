@@ -44,3 +44,10 @@ Failure response:
     "status": 400
 }
 ```
+
+```json
+{
+ "input": "grammar: For not use car. ",
+ "target": "Do not use in the car. "
+}
+```

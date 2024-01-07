@@ -1,0 +1,37 @@
+@use '../global';
+
+$color: global.$color;
+$mobile: global.$mobile;
+
+.forwork{
+    width: 100%;
+    .forwork__work__heading{
+        font-weight: bold;
+        text-align: center;
+        font-size: 3rem;
+        margin: 3rem 0;
+        padding: 1rem;
+        @media(max-width: $mobile) {
+            font-size: 2rem;
+        }
+    }
+    .forwork__work__info{
+        width: 40%;
+        margin: 3rem auto;
+        font-size: 1.2rem;
+        text-align: center;
+        @media(max-width: $mobile) {
+            width: 90%;
+        }
+    }
+    .forwork__icon{
+        margin: 1rem auto 3rem auto;
+        display: flex;
+        width: 25%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media(max-width: $mobile) {
+            width: 80%;
+        }
+    }
+}

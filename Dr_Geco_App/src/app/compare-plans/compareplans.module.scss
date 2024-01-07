@@ -1,0 +1,28 @@
+@use '../global';
+
+$color: global.$color;
+$mobile: global.$mobile;
+
+.comapre_plans{
+    width: 100%;
+    .comapre_plans__heading{
+        font-weight: bold;
+        text-align: center;
+        font-size: 3rem;
+        margin: 3rem 0;
+        padding: 1rem;
+        @media(max-width: $mobile) {
+            font-size: 2rem;
+        }
+    }
+    .comapre_plans__container{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: 2rem auto 3rem auto;
+        @media(max-width: $mobile) {
+            width: 90%;
+        }
+    }
+}

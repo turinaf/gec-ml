@@ -1,0 +1,178 @@
+@use './global';
+
+$color: global.$color;
+$mobile: global.$mobile;
+
+
+.home__main{
+    display: flex;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 3% 0 0 0;
+    width: 100%;
+    background-image: url('https://img.freepik.com/free-photo/abstract-refreshing-blue-tropical-watercolor-background-illustration-high-resolution-free-image_1340-20384.jpg?w=1380&t=st=1690391302~exp=1690391902~hmac=9cfa0ecb376676fdaedc7b9af5bb76d5e339f431568739fca10c0ce618d5419f');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media(max-width: $mobile) {
+        flex-wrap: wrap;
+        padding: 2rem;
+        margin: 10% 0 0 0;
+    }
+}
+.home__main__left{
+    width: 30%;
+    margin: 8% 3rem 10rem 3rem;
+    @media(max-width: $mobile) {
+        width: 100%;
+        margin: 8% 0rem 2rem 0rem;
+    }
+    .home__left__register{
+        padding: 0.5rem 1.5rem;
+        border: $color solid 1px;
+        background-color: $color;
+        border-radius: 0.5rem;
+        margin: 1rem 1rem 1rem 0;
+        font-size: 0.9rem;
+        color: white;
+    }
+    .home__left__heading{
+        font-size: 3rem;
+        font-weight: bolder;
+        @media(max-width: $mobile) {
+            font-size: 2rem;
+        }
+    }
+    .home__left__note{
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+    .home__left__policy{
+        font-size: 0.9rem;
+        margin: 1rem 0;
+    }
+    .home__left__login{
+        padding: 0.5rem 1.5rem;
+        border: black solid 1px;
+        background-color: white;
+        border-radius: 0.5rem;
+        margin: 1rem 1rem 1rem 0;
+        font-size: 0.9rem;
+    }
+}
+.home__main__right{
+    width: 40%;
+    margin: 8% 3rem 10rem 3rem;
+    text-align: center;
+    @media(max-width: $mobile) {
+        width: 100%;
+        margin: 8% 0rem 10rem 0rem;
+    }
+    .home__main__right__video{
+        width: 75%;
+        border-radius: 0.5rem;
+        @media(max-width: $mobile) {
+            width: 90%;
+        }
+    }
+}
+.home__work{
+    text-align: center;
+    width: 100%;
+    padding: 5rem;
+    @media(max-width: $mobile) {
+        padding: 1rem;
+    }
+    .home__work__heading{
+        font-weight: bold;
+    }
+    .home__work__info{
+        width: 60%;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+        @media(max-width: $mobile) {
+            width: 90%;
+        }
+    }
+    .home__work__end{
+        padding: 1rem;
+        margin: 8rem 0 1rem 0;
+    }
+    .home__work__btn{
+        @include global.btn__register($color);
+        width:20%;
+        margin: 3rem auto;
+        @media(max-width: $mobile) {
+            width: 90%;
+        }
+    }
+    .home__work__spelling{
+        display: flex;
+        width: 60%;
+        margin: 8rem auto 1rem auto;
+        align-items: center;
+        text-align: left;
+        justify-content: space-between;
+        @media(max-width: $mobile) {
+            width: 90%;
+            flex-wrap: wrap;
+            margin: 1rem auto 1rem auto;
+        }
+        .home__work__spelling__video{
+            width: 50%;
+            border-radius: 0.5rem;
+            margin: 0 3rem;
+            -webkit-box-shadow: 0px 0px 17px -10px rgba(179, 179, 179, 1);
+            -moz-box-shadow: 0px 0px 17px -10px rgba(179, 179, 179, 1);
+            box-shadow: 0px 0px 17px -5px rgba(179, 179, 179, 1);
+            @media(max-width: $mobile) {
+                width: 100%;
+                margin: 3rem 0rem;
+            }
+        }
+    }
+    .home__work__sections{
+        display: flex;
+        width: 65%;
+        margin: 5rem auto;
+        padding: 1rem;
+        justify-content: space-between;
+        @media(max-width: $mobile) {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .home__work__section{
+            width: 25%;
+            @media(max-width: $mobile) {
+                width: 100%;
+                margin: 3rem 0;
+            }
+            .home__work__section__text{
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            .home__work__section__icon{
+                border-radius: 0.5rem;
+                -webkit-box-shadow: 0px 0px 17px -10px rgba(179, 179, 179, 1);
+                -moz-box-shadow: 0px 0px 17px -10px rgba(179, 179, 179, 1);
+                box-shadow: 0px 0px 17px -5px rgba(179, 179, 179, 1);
+                margin: 1rem 0;
+            }
+            .home__work__section__icons__container__up{
+                display: flex;
+                justify-content: space-between;
+                align-items:flex-start;
+                margin: 3rem 0 1rem 0;
+                @media(max-width: $mobile) {
+                    margin: 0.5rem 0 1rem 0;
+                }
+            }
+            .home__work__section__icons__container__down{
+                display: flex;
+                align-items:flex-start;
+                justify-content: space-between;
+            }
+        }
+    }
+}

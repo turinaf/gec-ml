@@ -1,7 +1,7 @@
 # Leveraging The Power of Open-source LLM for GEC
 
 
-## Web App
+## Flask Web App
 The web app is simple demo built with [flask](https://flask.palletsprojects.com/en/3.0.x/)
 
 ### Run

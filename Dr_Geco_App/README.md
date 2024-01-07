@@ -1,6 +1,6 @@
 # Dr. Geco App
 
-Welcome to the Dr. Geco App repository! This app is designed to provide users with features similar to the popular grammar checking tool. Users can create accounts, create and edit documents, check the grammar of their text, find synonyms for words, and even translate text to other languages. The app is built using Next.js, CSS Modules, React with TypeScript, and utilizes a finetuned machine learning model for grammar checking.
+Welcome to the Dr. Geco App repository! This app is designed to provide users with features similar to the popular grammar checking tool. Users can create accounts, create and edit documents and  also check the grammar of their text. The app is built using Next.js, CSS Modules, React with TypeScript, and utilizes a finetuned machine learning model for grammar checking.
 
 ## Features
 

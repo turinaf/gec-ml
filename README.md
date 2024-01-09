@@ -62,7 +62,7 @@ This app is designed to provide users with features similar to the popular gramm
 
 - **Document Editing:** Create and edit documents within the app's interface. The editing experience is user-friendly and intuitive.
 
-- **Grammar Checking:** The app integrates with the OpenAI API to provide grammar checking services, helping users improve the quality of their written content.
+- **Grammar Checking:** The app integrates with a finetuned T5 ML Model with Flask API  to provide grammar checking services, helping users improve the quality of their written content.
 
 
 ## Tech Stack
